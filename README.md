@@ -245,6 +245,7 @@ Or:
 
 Interface: 
 F1:                 Toggle Keymap
+F5:                 Reload GDS from disk
 F8:                 Take Screenshot
 P:                  Toggle Performance Counter
 L:                  Toggle Legend

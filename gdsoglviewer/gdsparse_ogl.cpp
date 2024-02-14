@@ -684,6 +684,26 @@ void GDSParse_ogl::query_update() {
 	}
 }
 
+
+void GDSParse_ogl::force_update() {
+	//v_printf(1, "got GDS from %s \n", wm->filename);
+	fclose(_iptr);
+	//v_printf(1, "closed itpr, opening %s..\n", wm->filename);	
+	_iptr = fopen(wm->filename, "rb");
+	//v_printf(1, "opened itpr..\n");
+	
+	// code copied from above, at the end of query_update
+	char tmp[256];
+	strcpy(tmp, _topcell->GetName());
+	v_printf(1, "F5 was pressed, reloading GDS..\n");
+	Reload();
+	_Objects->ConnectReferences();
+	SetTopcell(tmp); // This is not elegant..
+	ComputeVirtualLayer();
+	initWorld();
+}
+
+
 void GDSParse_ogl::gl_draw_world(int width, int height, bool HQ)
 {
 	glDisable(GL_POLYGON_OFFSET_FILL);
@@ -1179,6 +1199,9 @@ void GDSParse_ogl::gl_event( int event, int data, int xpos, int ypos , bool shif
                 if(control)
                     renderer.wireframe = !renderer.wireframe;
                 break;
+        case KEY_F5:
+        	// v_printf(1, "F5 was pressed..\n");
+        	force_update();
 		default:
 			break;
 		}

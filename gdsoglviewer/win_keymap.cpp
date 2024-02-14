@@ -39,6 +39,7 @@ WinKeymap::WinKeymap()
 	item->Text = "INTERFACE"; AddItem(item);
 	//item->Text = (char*)"<ALT> F4:           Exit Program"; AddItem(item); item->Index++;  // Does not always work..
 	item->Text = "F1:                 Toggle Keymap"; AddItem(item);
+	item->Text = "F5:                 Reload GDS from disk"; AddItem(item);
 	item->Text = "F8:                 Capture Screenshot"; AddItem(item);
 	item->Text = "P:                  Toggle Performance Counter"; AddItem(item);
 	item->Text = "L:                  Toggle Legend"; AddItem(item);
