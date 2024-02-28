@@ -1045,30 +1045,60 @@ void GDSParse_ogl::gl_event( int event, int data, int xpos, int ypos , bool shif
 		switch (data) {
 		case KEY_W:
 		case KEY_UP:
-			_vz = 5.0f*_speed_factor;
-			if (shift) {
-				_vz = _vz / 10.0;
+			// look up
+			if (control){
+				_vrx += 128.0f * _speed_factor/(shift ? 5 : 0.1) * (GLfloat)(-5) / wm->screenHeight;
+			// move up
+			} else if (alt) {
+				_vy2 -= 5.0f*_speed_factor/(shift ? 10.0 : 1);
+			// move forward
+			} else {
+				_vz = 5.0f*_speed_factor;
+				if (shift) {
+					_vz = _vz / 10.0;
+				}
 			}
 			break;
 		case KEY_S:
 		case KEY_DOWN:
-			_vz = -5.0f*_speed_factor;
-			if (shift) {
-				_vz = _vz / 10.0;
+			// look down
+			if (control){
+				_vrx += 128.0f * _speed_factor/(shift ? 5 : 0.1) * (GLfloat)(5) / wm->screenHeight;
+			// move down
+			} else if (alt) {
+				_vy2 -= -5.0f*_speed_factor/(shift ? 10.0 : 1);
+			// move back
+			} else {
+				_vz = -5.0f*_speed_factor;
+				if (shift) {
+					_vz = _vz / 10.0;
+				}
 			}
 			break;
 		case KEY_A:
 		case KEY_LEFT:
-			_vx = 5.0f*_speed_factor;
-			if (shift) {
-				_vx = _vx / 10.0;
+			// look left
+			if (control){
+				_vry += 128.0f * _speed_factor/(shift ? 5 : 0.1) * (GLfloat)(-5) / wm->screenWidth;
+			// move left
+			} else {
+				_vx = 5.0f*_speed_factor;
+				if (shift) {
+					_vx = _vx / 10.0;
+				}
 			}
 			break;
 		case KEY_D:
 		case KEY_RIGHT:
-			_vx = -5.0f*_speed_factor;
-			if (shift) {
-				_vx = _vx / 10.0;
+			// look right
+			if (control){
+				_vry += 128.0f * _speed_factor/(shift ? 5 : 0.1) * (GLfloat)(5) / wm->screenWidth;
+			// move right
+			} else {
+				_vx = -5.0f*_speed_factor;
+				if (shift) {
+					_vx = _vx / 10.0;
+				}
 			}
 			break;
 		case KEY_Z:
