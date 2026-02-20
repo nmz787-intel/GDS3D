@@ -119,6 +119,10 @@ One extra option can be added to a layer, which is "Datatype". This can normally
 
 When the program is running, it is possible to move the camera around using the classical 3D-game controls, the A,W,S,D (or the arrow) keys. The Q and Z keys are used to move the camera up and down and the R key can be used to reset the view.
 
+The view can also be panned (translated) using the arrow keys while holding the CTRL key. Holding ALT while pressing the Up or Down arrow keys moves the camera up or down, as an alternative to the Q and Z keys.
+
+The F5 key can be used to reload the GDSII file from disk without restarting the program, which is useful when the layout is being actively modified in a design tool.
+
 Initially the program has a traditional mouse cursor. In this mode the user can rotate the view by pressing the left mouse button and dragging the mouse to the left or right to rotate the view, and up or down to tilt the view. Dragging the mouse while holding the right mouse button will strafe the view for left or right motion, and move forwards or backwards for up or down motion. Finally, the scroll wheel can be used to move up or down.
 
 By pressing the M key, the program switches to mouse control mode. In this mode the mouse can be used to rotate and tilt the camera much like in a 3D-game. The scroll wheel can still be used to move up and down.
@@ -243,38 +247,49 @@ Or:
  
 7. Keymap
 
-Interface: 
-F1:                 Toggle Keymap
-F5:                 Reload GDS from disk
-F8:                 Take Screenshot
-P:                  Toggle Performance Counter
-L:                  Toggle Legend
-T:                  Topcell selection
-R:                  Reset View
-E:                  Toggle Exploded View
-F:                  OutPut to gmsh (geo File)
-K:                  Enable Ruler
-H:                  Enable Net Highlighting
-ESC:                Cancel
+### Interface
 
-Motion:
-M:                  Lock Mouse
-W, Up:              Forward
-S, Down:            Backward
-A, Left:            Left
-D, Right:           Right
-Q:                  Up
-Z:                  Down
-Hold Shift:         Increase Movement Speed
+| Key | Action |
+|-----|--------|
+| F1  | Toggle Keymap |
+| F5  | Reload GDS from disk |
+| F8  | Take Screenshot |
+| P   | Toggle Performance Counter |
+| L   | Toggle Legend |
+| T   | Topcell selection |
+| R   | Reset View |
+| E   | Toggle Exploded View |
+| F   | Output to gmsh (geo File) |
+| K   | Enable Ruler |
+| H   | Enable Net Highlighting |
+| ESC | Cancel |
 
-Mouse Special:
-Hold Left Button:   Rotate
-Hold Right Button:  Walk and Strafe
-Wheel Up/Down:      Move Up/Down
-<Alt> Wheel Up:     Show First Invisible Layer
-<Alt> Wheel Down:   Hide First Visible Layer
-<Ctrl> Wheel Up:    Hide Last Visible Layer / Change Ruler Layer
-<Ctrl> Wheel Down:  Show Last Invisible Layer / Change Ruler Layer
+### Motion
+
+| Key                        | Action                                      |
+|----------------------------|---------------------------------------------|
+| M                          | Lock Mouse                                  |
+| W, Up                      | Forward                                     |
+| S, Down                    | Backward                                    |
+| A, Left                    | Left                                        |
+| D, Right                   | Right                                       |
+| Q                          | Up                                          |
+| Z                          | Down                                        |
+| Hold Shift                 | Increase Movement Speed                     |
+| Ctrl + Up/Down/Left/Right  | Pan View                                    |
+| Alt + Up/Down              | Move Up/Down (alternative to Q/Z)          |
+
+### Mouse Special
+
+| Action              | Result                                           |
+|---------------------|--------------------------------------------------|
+| Hold Left Button    | Rotate                                           |
+| Hold Right Button   | Walk and Strafe                                  |
+| Wheel Up/Down       | Move Up/Down                                     |
+| Alt + Wheel Up      | Show First Invisible Layer                       |
+| Alt + Wheel Down    | Hide First Visible Layer                         |
+| Ctrl + Wheel Up     | Hide Last Visible Layer / Change Ruler Layer     |
+| Ctrl + Wheel Down   | Show Last Invisible Layer / Change Ruler Layer   |
 
 8. Contact Information & License
 
